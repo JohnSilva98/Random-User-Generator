@@ -1,50 +1,67 @@
-Projeto: Gerador Aleatório de Usuários
+# Random User Generator
 
-Este projeto demonstra como buscar dados aleatórios de usuários a partir de uma API externa, o Random User Generator (https://randomuser.me/), e exibi-los em uma página web. Ele fornece uma interface amigável com informações claras e um botão para atualizar os dados.
+Este projeto é uma aplicação web simples que consome uma API para gerar e exibir dados aleatórios de usuários. O objetivo é apresentar um exemplo prático de como utilizar uma API para buscar informações e exibi-las de maneira interativa em uma interface web.
 
-Funcionalidades:
+## Objetivo
 
-Busca dados de usuários aleatórios: Utiliza a API fetch do JavaScript para buscar informações como nome, email, idade, localização, telefone e senha de um usuário aleatório.
-Exibe informações do usuário: Apresenta os dados do usuário em uma página web com um design visualmente atraente.
-Botão de atualização: Permite gerar novos dados de usuário a cada clique.
-Ícones representativos: Emprega ícones para representar diferentes detalhes do usuário.
-Destaque de informações: Ao passar o mouse sobre um ícone, as informações correspondentes são destacadas.
-API Utilizada:
+O principal objetivo deste projeto é demonstrar como integrar uma API externa para buscar dados e exibi-los na interface do usuário. No caso, o projeto utiliza a [Random User Generator API](https://randomuser.me) para gerar dados de usuários fictícios, que incluem nome, e-mail, idade, endereço, telefone e senha.
 
-Random User Generator (https://randomuser.me/)
-Essa API gratuita e de código aberto fornece uma maneira conveniente de gerar dados de usuários realistas para fins de desenvolvimento e testes.
-Buscando Dados de Usuários:
+## API Utilizada
 
-Endpoint da API: O projeto utiliza o seguinte endpoint da API para buscar dados de usuários aleatórios:
+O projeto utiliza a [Random User Generator API](https://randomuser.me), que fornece dados aleatórios de usuários em formato JSON. A API é acessível através da URL:
 
-https://randomuser.me/api/?nat=BR,US,CH
-Este endpoint retorna dados de usuários do Brasil (BR), Estados Unidos (US) e Suíça (CH). Você pode modificar o parâmetro nat para especificar outras nacionalidades.
-Código JavaScript: A função callAPI no script index.js é responsável pela chamada à API:
+### Parâmetros da API
 
-JavaScript
-async function callAPI() {
-try {
-const res = await fetch(URL);
-// ... processa a resposta bem-sucedida e extrai os dados do usuário
-} catch (error) {
-// ... trata erros
-}
-}
-Use o código com cuidado.
+- `nat`: Define a nacionalidade dos usuários gerados. No projeto, foram incluídos Brasil (BR), Estados Unidos (US) e Suíça (CH).
 
-A API fetch é usada para buscar os dados da URL especificada de forma assíncrona.
-O código verifica se a resposta foi bem-sucedida (código de status 200) e então analisa a resposta JSON para extrair as informações relevantes do usuário.
-Exibição dos Dados:
+## Como os Dados São Buscados
 
-Os dados do usuário recuperados são usados para atualizar dinamicamente o conteúdo HTML de vários elementos na página web.
-Elementos como #usrPhoto (foto do usuário), .userName (nome do usuário) e itens de lista com detalhes do usuário são preenchidos com os dados correspondentes.
-Executando o Projeto:
+1. **Carregamento da Página:**
 
-Pré-requisitos:
+   - Quando a página é carregada (`DOMContentLoaded`), o JavaScript faz uma solicitação para a API usando a função `fetch()`.
 
-Um navegador web moderno com JavaScript habilitado.
-Passos:
+2. **Requisição para a API:**
 
-Clone este repositório ou baixe os arquivos do projeto.
-Certifique-se de que os ícones necessários (icons/circle-user.svg, etc.) estejam localizados no diretório correto.
-Abra o arquivo index.html em seu navegador.
+   - A função `callAPI()` faz a chamada assíncrona para a API e aguarda a resposta.
+
+3. **Processamento da Resposta:**
+
+   - Quando a resposta é recebida e o status é 200 (sucesso), os dados do usuário são extraídos do JSON retornado pela API.
+   - A imagem do usuário, nome, e-mail, idade, endereço, telefone e senha são extraídos e exibidos na interface.
+
+4. **Atualização da Interface:**
+
+   - A imagem do usuário é exibida dentro de um elemento `<div>` com a classe `userPhoto`.
+   - As informações do usuário são atualizadas dinamicamente em uma lista dentro do elemento `<ul>` com a classe `info`.
+   - O nome do usuário é exibido em um parágrafo `<p>` com a classe `userName`.
+
+5. **Interatividade:**
+
+   - A lista de informações (`info`) permite que o usuário passe o mouse sobre diferentes itens para exibir detalhes relacionados.
+
+6. **Botão de Atualização:**
+   - O botão "refresh page" permite recarregar a página e gerar um novo usuário aleatório.
+
+## Estrutura dos Arquivos
+
+- `index.html`: Contém a estrutura HTML da página.
+- `styles.css`: Define os estilos para a página e os elementos da interface.
+- `index.js`: Contém o código JavaScript que faz a chamada à API, processa os dados e atualiza a interface.
+
+## Como Executar
+
+1. Clone o repositório ou baixe os arquivos para o seu computador.
+2. Abra o arquivo `index.html` em um navegador web.
+3. A página exibirá um usuário aleatório e suas informações. Clique no botão "refresh page" para gerar um novo usuário.
+
+## Contribuições
+
+Sinta-se à vontade para contribuir com melhorias ou correções. Para isso, por favor, faça um fork do repositório e envie um pull request com suas alterações.
+
+## Licença
+
+Este projeto está licenciado sob a [MIT License](LICENSE).
+
+---
+
+Obrigado por conferir este projeto! Se você tiver alguma dúvida ou sugestão, por favor, entre em contato.
