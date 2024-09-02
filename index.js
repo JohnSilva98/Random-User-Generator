@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const userPhoto = document.querySelector("#usrPhoto");
   const infoIcons = document.querySelector(".info");
   const refreshbutton = document.querySelector(".refresh");
-  const URL = "https://randomuser.me/api/?nat=BR,US,CH";
+  const URL = "https://randomuser.me/api/?nat=BR,US,CN";
 
   refreshbutton.addEventListener("click", function () {
     location.reload();
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <li data-title="My age is: " data-value=" ${user.dob.age} yrs" class="icon">
             <img src="icons/calendar.svg" alt="" />
           </li>
-          <li data-title="My address is: " data-value=" ${user.location.city}" class="icon">
+          <li data-title="My address is: " data-value=" ${user.location.city} ${user.location.country}" class="icon">
             <img src="icons/map-pin-house.svg" alt="" />
           </li>
           <li data-title="My phone is: " data-value=" ${user.cell}" class="icon">
