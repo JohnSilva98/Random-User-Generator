@@ -60,4 +60,17 @@ h1 {
 li {
   list-style: none;
   cursor: pointer;
+  transition: 1s ease-in-out;
+}
+.active {
+  color: blue;
+}
+
+li:hover,
+.active {
+  margin-top: -10px;
+}
+
+.icon {
+  color: #fff;
 }
