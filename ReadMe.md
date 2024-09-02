@@ -2,6 +2,8 @@
 
 Bem-vindo ao **Random User Generator**! Este projeto é uma aplicação web simples que consome uma API para gerar e exibir dados aleatórios de usuários. O objetivo é demonstrar como integrar uma API externa para buscar e apresentar informações de maneira interativa.
 
+![alt text](image.png)
+
 ## 🎯 Objetivo
 
 O principal objetivo deste projeto é mostrar como integrar e utilizar uma API para exibir dados aleatórios de usuários em uma interface web. Utilizamos a [Random User Generator API](https://randomuser.me) para gerar dados fictícios de usuários, incluindo:
