@@ -23,7 +23,7 @@ A API utilizada para este projeto é a [Random User Generator API](https://rando
 
 ### Parâmetros
 
-- **`nat`**: Define a nacionalidade dos usuários. No projeto, são usadas as nacionalidades Brasil (BR), Estados Unidos (US) e Suíça (CH).
+- **`nat`**: Define a nacionalidade dos usuários. No projeto, são usadas as nacionalidades Brasil (BR), Estados Unidos (US) e China (CN).
 
 ## 🚀 Como os Dados São Buscados
 
